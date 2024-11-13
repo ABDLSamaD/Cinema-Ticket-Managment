@@ -1,0 +1,508 @@
+:root {
+  --white-text: #fff;
+  --light-text: #ddf;
+  --w-f: 100%;
+  --h-f: 100%;
+}
+/* #020f2417 */
+/* toggle day night btn to dark to light */
+.body-bg-light {
+  background: #607d8b9a;
+  transition: all 0.5s ease;
+}
+.body-bg-light .dash-aside {
+  background: #020f2402;
+  backdrop-filter: blur(15px);
+}
+
+.dash-main {
+  /* background-color: #fff; */
+  color: var(--light-text);
+  font-family: sans-serif;
+  /* z-index: 1000; */
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+/* dashboard top sdection */
+.dash-header {
+  position: relative;
+  top: 1em;
+  width: var(--w-f);
+  height: auto;
+  padding: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: sans-serif;
+  /* morphism */
+  /* background: rgba(0, 0, 0, 0.22); */
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+}
+.dash-header .logo {
+  width: 200px;
+  margin-left: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+.dash-header .logo h1 {
+  color: var(--white-text);
+  letter-spacing: 1px;
+  margin-left: 10px;
+  &:hover {
+    color: var(--light-text);
+  }
+}
+.dash-header .logo img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+/* search of dash-header */
+.dash-header .search {
+  width: 600px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.159);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  padding: 10px 8px;
+}
+.dash-header .search i {
+  font-size: 1.1vw;
+  color: #ddf;
+  padding: 3px 0px 0px 0;
+}
+.dash-header .search input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 6px;
+  border-radius: 30px;
+  background: transparent;
+  font-size: 1.1em;
+  margin-left: 4px;
+  color: var(--white-text);
+}
+
+/* dash header user settings */
+.dash-header .user-setting {
+  /* background: red; */
+  padding: 2px;
+  width: auto;
+  position: relative;
+  z-index: 999;
+}
+.dash-header .user-setting img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* icon user */
+.dash-header .user-setting .icon-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+/* setting-list  */
+.dash-header .user-setting .setting-list {
+  background: rgba(255, 255, 255, 0.259);
+  position: absolute;
+  top: 46px;
+  left: -60px;
+  width: 100%;
+  min-width: 180px;
+  min-height: 180px;
+  height: 100%;
+  border-radius: 10px;
+  padding: 5px 10px;
+  /* z-index: 999; */
+  display: none;
+}
+/* when user-setting parent hover then setting-list child has displayed show */
+.dash-header .user-setting .setting-list.show_userlist {
+  display: flex;
+  /* z-index: 1; */
+}
+
+/* this is the list of user image display */
+.dash-header .user-setting .setting-list ul {
+  font-size: 1.1vw;
+}
+.dash-header .user-setting .setting-list ul li {
+  background: rgb(239 255 0 / 88%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 4px 0;
+  border-radius: 14px;
+}
+.dash-header .user-setting .setting-list ul li a {
+  color: #000;
+  cursor: pointer;
+}
+
+/* right content of dash header */
+.dash-header .right {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* ================== dash aside bar ================== */
+.dash-aside {
+  position: fixed;
+  top: 1em;
+  left: 0;
+  /* padding: 10px; */
+  /* padding-top: 10px; */
+  padding-left: 20px;
+  height: 100vh;
+  width: 19vw;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  /* overflow: hidden; */
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  /* background morphism */
+  /* background: #020f2431;
+  backdrop-filter: blur(15px); */
+}
+
+/* user details */
+.dash-aside .user-info {
+  margin-top: 1rem;
+  margin-left: 1em;
+  width: 230px;
+  height: 150px;
+  background: rgba(255, 255, 240, 0.251);
+  box-shadow: 0 1px 4px rgba(110, 110, 110, 0.151);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 20px;
+  border: 1px solid rgba(202, 202, 196, 0.251);
+  &:hover {
+    scale: 1.05;
+    transition: scale 0.33s linear;
+  }
+}
+.dash-aside .user-info .logo-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.dash-aside .user-info .logo-name img {
+  width: 60px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+  overflow: hidden;
+}
+.dash-aside .user-info .logo-name .username {
+  font-size: 0.8em;
+}
+.dash-aside .user-info .user-buying .balance {
+  font-size: 0.889em;
+  color: rgba(255, 255, 255, 0.395);
+}
+.dash-aside .user-info .user-buying .credit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 120px;
+  color: rgb(239 255 0 / 88%);
+  font-size: 1.09vw;
+  /* flex-direction: column; */
+}
+.dash-aside .user-info .user-buying .credit span {
+  padding: 2px 4px 4px 0px;
+}
+
+/* class of sidebar open and close */
+.asiderbar-hide-open {
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.toggle-hamburger {
+  /* position: absolute; */
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  display: none;
+  cursor: pointer;
+}
+
+.dash-aside ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin-top: 4rem;
+}
+.dash-aside ul li.active {
+  background: rgb(239 255 0 / 88%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.dash-aside ul li.active a span {
+  color: #000;
+}
+.dash-aside ul li:hover {
+  background: rgb(239 255 0 / 88%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  scale: 1.08;
+  > a span {
+    color: black;
+  }
+}
+.dash-aside ul li {
+  height: 50px;
+  width: 230px;
+  margin: 0.5em 0;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.43s ease;
+  font-size: 1.2vw;
+  color: rgb(0, 179, 255);
+  > a {
+    color: #000;
+  }
+}
+.dash-aside ul li span {
+  margin-left: 0.3em;
+  margin-top: 2em;
+  color: #ddf;
+  font-weight: 500;
+}
+.dash-aside ul li:last-child {
+  position: relative;
+  bottom: -2rem;
+}
+
+/* day night toggle btn of dash header right parent first child */
+/* =========================== start =========================== */
+.dash-header .right .dark-mode {
+  position: relative;
+  margin-right: 1em;
+}
+.dash-header .right .dark-mode #toggle_checkbox {
+  display: none;
+}
+
+.dash-header .right .dark-mode label {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 116px;
+  height: 56px;
+  margin: 0 auto;
+  background-color: #77b5fe;
+  border-radius: 56px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+  overflow: hidden;
+}
+
+.dash-header .right .dark-mode #star {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 30px;
+  height: 30px;
+  background-color: #fafd0f;
+  transform: scale(1);
+  border-radius: 50%;
+  transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform,
+    0.3s ease background-color;
+  z-index: 1;
+}
+
+.dash-header .right .dark-mode #star-1 {
+  position: relative;
+}
+
+.dash-header .right .dark-mode #star-2 {
+  position: absolute;
+  transform: rotateZ(36deg);
+}
+
+.dash-header .right .dark-mode .star {
+  top: 0;
+  left: -7px;
+  font-size: 54px;
+  line-height: 28px;
+  color: #fafd0f;
+  transition: 0.3s ease color;
+}
+
+.dash-header .right .dark-mode #moon {
+  position: absolute;
+  bottom: -52px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s ease bottom;
+}
+
+.dash-header .right .dark-mode #moon:before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -17px;
+  width: 40px;
+  height: 40px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s ease background-color;
+}
+
+.dash-header .right .dark-mode #toggle_checkbox:checked + label {
+  background-color: #000;
+}
+
+.dash-header .right .dark-mode #toggle_checkbox:checked + label #star {
+  top: 3px;
+  left: 64px;
+  transform: scale(0.3);
+  background-color: yellow;
+}
+
+.dash-header .right .dark-mode #toggle_checkbox:checked + label .star {
+  color: yellow;
+}
+
+.dash-header .right .dark-mode #toggle_checkbox:checked + label #moon {
+  bottom: 8px;
+}
+
+.dash-header .right .dark-mode #toggle_checkbox:checked + label #moon:before {
+  background-color: #000;
+}
+
+/* =========================== end =========================== */
+
+/* media query */
+@media screen and (max-width: 1020px) {
+  .dash-header {
+    padding: 0;
+    justify-content: space-evenly;
+  }
+  .dash-aside {
+    width: 60vw;
+    z-index: 999;
+    height: 100%;
+  }
+  .toggle-hamburger {
+    display: block;
+  }
+  .dash-header .search {
+    width: 200px;
+  }
+  /* user details */
+  .dash-aside .user-info {
+    margin-left: 0.5em;
+    width: 180px;
+    height: 140px;
+    padding: 6px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 0.7em;
+  }
+  .dash-header .right .dark-mode label {
+    width: 76px;
+    height: 56px;
+  }
+
+  .dash-header .right .dark-mode #star {
+    width: 20px;
+    height: 20px;
+  }
+  .dash-header .logo h1 {
+    font-size: 1.3rem;
+  }
+  .dash-header .logo img {
+    width: 30px;
+  }
+}
+/* for small screen */
+@media screen and (max-width: 700px) {
+  .dash-header {
+    padding: 0;
+    justify-content: space-between;
+  }
+  .dash-aside {
+    padding-left: 5px;
+  }
+  /* user details */
+  .dash-aside .user-info {
+    width: 100px;
+    height: 90px;
+    padding: 0;
+    justify-content: space-around;
+    overflow: hidden;
+  }
+  .dash-aside .user-info:hover {
+    width: 120px;
+    /* z-index: 1; */
+    transition: all 0.3s ease;
+    height: 100px;
+  }
+  .dash-aside .user-info img {
+    width: 20px;
+    height: 20px;
+  }
+  .dash-aside .user-info .user-buying .credit {
+    width: 60px;
+    font-size: 1vw;
+  }
+  .dash-aside {
+    width: 30vw;
+    padding-left: 4px;
+    height: 100%;
+  }
+  .toggle-hamburger {
+    display: block;
+  }
+  .dash-header .search {
+    width: 100px;
+  }
+  .dash-aside ul li {
+    height: 30px;
+    width: 100px;
+    padding: 10px 12px;
+    font-size: 1.9vw;
+    border-radius: 10px;
+  }
+  .dash-header .right .dark-mode {
+    display: none;
+  }
+}

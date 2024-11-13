@@ -1,0 +1,198 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.images {
+  width: 100%;
+}
+
+.images img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* mall class add */
+.main {
+  height: 100% !important;
+  position: relative !important;
+  top: 5rem !important;
+  /* opacity: 0;
+    transform: translateX(-50%); */
+  transition: all 0.3s ease-in-out;
+}
+
+/* window scroll axis y and add class this to animation */
+
+.main .container .details {
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: animates 0.5s linear forwards;
+  animation-delay: 800ms;
+}
+@keyframes animates {
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.main .container .details h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation-delay: 2s;
+}
+
+.main .container .details h1 span {
+  color: rgba(6, 207, 233, 0.747);
+}
+/* map  */
+.map-container {
+  position: relative;
+  top: 0.8em !important;
+  height: 100%;
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  transition: background 0.4s ease-in-out;
+}
+/* .map-container:hover{
+    background: rgba(244,244,255,0.041);
+} */
+.map-container h3 {
+  line-height: 30px;
+  font-weight: normal;
+  color: #ddf;
+}
+.map-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+map {
+  width: 60%;
+  height: 300px;
+  align-items: right;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 100%;
+  width: 100%;
+}
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 100%;
+  width: 100%;
+}
+.map-info {
+  padding: 15px;
+  color: #ddf;
+  height: 100%;
+  position: relative;
+}
+/* add line before map info to styling */
+.map-info::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 14px;
+  background: #ebe4e49f;
+  height: 85%;
+  width: 3px;
+  border-radius: 10px;
+  /* margin: 0 auto; */
+}
+
+.map-info p {
+  line-height: 20px;
+  margin-bottom: 1em;
+  font-size: 0.91em;
+  position: relative;
+}
+.map-info p::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 5px;
+  background: #0505056c;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.map-info .call {
+  padding: 2px;
+  justify-content: space-between;
+  width: 180px;
+  margin-bottom: 1em;
+}
+.map-info .call i {
+  margin-right: 4px;
+  color: #333;
+}
+
+.map-info .l-h {
+  line-height: 20px;
+}
+
+/* media query for small screen start */
+@media screen and (max-width: 900px) {
+  /* mall class */
+  .main {
+    padding: 10px;
+    background: transparent;
+  }
+  .main .container .details h1 {
+    font-size: x-large;
+    margin-bottom: 5px;
+  }
+  .main .container {
+    width: 100% !important;
+  }
+  .main .container .details .images {
+    width: 100%;
+    margin-top: 1em;
+  }
+  .main .container .details .images img {
+    width: 100%;
+    height: 100%;
+  }
+  .map-container {
+    margin-top: 2rem;
+  }
+  .map-container h3 {
+    color: #000000;
+  }
+  .map-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .map-details map {
+    width: 100%;
+  }
+  .map-info {
+    margin-top: 1rem;
+    margin-left: 0.71em;
+  }
+}
+/* media query for small screen end */

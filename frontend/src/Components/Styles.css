@@ -1,0 +1,783 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Tilt+Prism&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "Popins", sans-serif;
+}
+
+:root {
+  --text-light: #ddf;
+  --text-color: #fff;
+  --bg-color: #34188a;
+  --w-full: 100%;
+  --h-full: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  /* background: linear-gradient(266deg, rgb(6 18 28) 1%, #151c42 61%),
+    url("../assets/background.png") no-repeat center center / cover; */
+  background: rgba(2, 18, 39, 0.938) url("../assets/background.png") no-repeat
+    center center / cover;
+  scroll-behavior: smooth;
+}
+
+/* selection */
+::selection {
+  background: #725ac1;
+  color: #ddf;
+}
+
+/* scroller */
+::-webkit-scrollbar {
+  width: 7px;
+  background: linear-gradient(266deg, rgb(6 18 28) 1%, #151c42 61%);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 144, 226, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ==================== Extra Define Classes Start ==================== */
+.bg-red {
+  background: red;
+}
+.bg {
+  background: rgba(30, 70, 30, 0.1);
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top {
+  position: relative;
+  top: 4rem;
+}
+.width {
+  width: 100%;
+}
+.height {
+  height: 100%;
+}
+
+.margin {
+  margin: 10px;
+}
+.padding {
+  padding: 10px;
+}
+
+/* button */
+button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #725ac1;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #725ac1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725ac1;
+}
+
+button:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #725ac1;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+/* id main */
+#main {
+  position: relative;
+  /* overflow: hidden; */
+  width: 100%;
+  height: 100%;
+}
+
+/* container */
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* ==================== Extra Define Classes End ==================== */
+
+/* ============ Home Component and many components of home all css Start ============ */
+#home {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 10rem;
+  perspective: 1000px;
+}
+
+/* ------- Home First Start --------- */
+#home #first {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#home #first .container {
+  width: 100%;
+  height: 100%;
+}
+#home #first .container .info-start {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: opacity 0.4s ease-in;
+  animation: bottomToTop 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 1s;
+  overflow: hidden;
+  /* background: #ffffff02; */
+  backdrop-filter: blur(10px);
+  /* position: sticky;
+  top: 0; */
+}
+@keyframes bottomToTop {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  60%,
+  70%,
+  80%,
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.migrate {
+  background: rgb(42 42 42 / 80%);
+  padding: 10px;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.2px solid #dcdcdc63;
+  transition: all 0.1s linear;
+  &:hover {
+    scale: 95%;
+  }
+}
+
+.migrate span {
+  color: #ddf;
+}
+
+.migrate img {
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.heading-start {
+  /* width: max-content; */
+  position: relative;
+}
+
+.heading-start h1 {
+  width: 100%;
+  font-size: 4vw;
+}
+.heading-start :where(h1, h2) {
+  animation: afterTopToBottom 2s linear forwards;
+  animation-delay: 2s;
+  opacity: 0;
+  /* background: linear-gradient(90deg, #179c8fa6, #ffffff77); */
+  /* background: linear-gradient(90deg, #ddf, #106ebbc2); */
+  background-clip: text;
+  overflow: hidden;
+  color: #ddf;
+  letter-spacing: 2px;
+  font-weight: 600;
+  z-index: 1000;
+  line-height: 1;
+}
+@keyframes afterTopToBottom {
+  100% {
+    opacity: 1;
+  }
+}
+
+.heading-start h2 {
+  font-size: 1.3vw;
+  /* color: #ddf; */
+  letter-spacing: 1px;
+  animation-delay: 3s;
+  margin-top: 1em;
+}
+
+/* ------- Home First End --------- */
+
+/* ------- Home Second Start --------- */
+#home #second {
+  position: relative;
+  top: 6rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#home #second .container {
+  width: 90%;
+  margin: auto;
+}
+#home #second .container h1 {
+  text-align: center;
+  font-size: 3vw;
+  color: transparent;
+  background: linear-gradient(180deg, #000, #fff);
+  background-clip: text;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  line-height: 2;
+}
+/* #home #second .container {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+#home #second .container.second-animation {
+  animation: leftToCenter 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 1s;
+} */
+@keyframes leftToCenter {
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+/* ------- Home Second End --------- */
+
+/* ------- Home Third Start --------- */
+#home #third {
+  position: relative;
+  top: 3rem;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#third .container {
+  height: 100%;
+  position: sticky;
+  top: 49px;
+  /* transform: translateX(100%);
+  opacity: 0; */
+  /* gap: 1em; */
+}
+#third .container h1 {
+  display: block;
+}
+#third .container.third-animation {
+  /* animation: rightToLeft 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards; */
+  animation-delay: 1s;
+}
+
+@keyframes rightToLeft {
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* ------- Home Third End --------- */
+
+/* ============ Home Component and many components of home all css End ============ */
+
+/* media query for small screen */
+@media screen and (max-width: 980px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* ===================================================================================================== */
+
+/* ============ Cinema Component and many components of about all css Start ============ */
+#cinema {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#cinema .container {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: display 4s linear forwards;
+  animation-delay: 1.5s;
+  /* overflow: hidden; */
+  display: grid;
+  place-items: center;
+  margin-bottom: 4rem;
+}
+
+/* animation of components start */
+.animation-rounded {
+  position: relative;
+  background: rgb(255, 255, 255);
+  width: 0;
+  height: 6px;
+  border-radius: 20px;
+  position: absolute;
+  top: -161px;
+  left: 0;
+}
+.animation-rounded.animation-rounded-again {
+  animation: rounded 3s linear alternate;
+}
+@keyframes rounded {
+  50% {
+    width: 95%;
+  }
+  100% {
+    width: 100%;
+    background: transparent;
+  }
+}
+/* animation of components end */
+.animation {
+  animation: displayAfterRoundedAnimation 2s linear forwards;
+}
+
+#mainDisplay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  animation-delay: 3s;
+  opacity: 0;
+}
+
+/* All components are same animation after click on the component */
+@keyframes displayAfterRoundedAnimation {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ============ Cinema Component and many components of about all css End ============ */
+
+/* ============ Contact Component and many components of about all css Start ============ */
+#contact {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 10rem;
+  /* overflow-y: hidden; */
+}
+#contact .container {
+  /* transform: translateY(100vh) scaleX(0.2); */
+  opacity: 0;
+  animation: display 4s linear forwards;
+  animation-delay: 1.5s;
+  overflow: hidden;
+  > h1 {
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+}
+@keyframes display {
+  100% {
+    opacity: 1;
+  }
+}
+#contact .container .forms_input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#contact .container .forms_input .input_box {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 1em 0;
+}
+#contact .container .forms_input .input_box input {
+  width: 100%;
+}
+#contact .container .forms_input .input_box .labels {
+  color: lightskyblue;
+}
+#contact .container .forms_input .input_box textarea {
+  background: transparent;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1rem;
+  color: #ddf;
+  border: 1px solid rgba(11, 118, 225, 0.664);
+  border-radius: 5px;
+  &:hover {
+    border-color: #000000;
+  }
+  &:focus {
+    border-color: rgb(4, 124, 236);
+    background: #fff;
+    color: #000;
+  }
+}
+/* ============ Contact Component and many components of about all css End ============ */
+
+/* ============ Movies Component and many components of about all css Start ============ */
+
+/* in this component of styling these are two contents first is images and it's bio and second is trailer and timming button of movies in cinema both have parent class is same do'nt be confuse */
+
+#movie {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 10rem;
+  /* overflow: hidden; */
+}
+
+/* movies params of slider clicked to that id */
+#movie .container {
+  opacity: 0;
+  animation: display 4s linear forwards;
+  animation-delay: 1.5s;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1em;
+  padding: 1em;
+}
+
+#movie .container .row .image {
+  width: 100%;
+  height: 400px;
+}
+#movie .container .row .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  &:hover {
+    transition: scale 0.3s ease;
+    scale: 01.04;
+  }
+}
+#movie .container .row .info-text {
+  margin-top: 10px;
+  padding: 4px;
+  color: #ddf;
+  letter-spacing: 1px;
+  white-space: wrap;
+}
+#movie .container .row .info-text p {
+  line-height: 25px;
+  color: #725ac1;
+  margin: 10px 0;
+  font-weight: normal;
+  > span {
+    color: #ddf;
+    font-weight: normal;
+  }
+}
+
+/* movies exact content of slider */
+#movie .containers {
+  opacity: 0;
+  animation: display 4s linear forwards;
+  animation-delay: 1.5s;
+  /* overflow: hidden; */
+  width: 80%;
+  margin: auto;
+  height: 100%;
+}
+#movie .container .row {
+  position: relative;
+  display: block;
+}
+#movie .container .row .info-text p:nth-child(2) {
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+#movie .container .row .ticket-buttons {
+  margin-top: 2rem;
+  > h1 {
+    margin-bottom: 10px;
+    color: #ddf;
+  }
+}
+#movie .container .row .ticket-buttons button {
+  margin: 0 5px;
+}
+
+/* another movie css from backend */
+.movie-info {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 4rem;
+  margin-bottom: 7rem;
+}
+.movie-info .containerd {
+  margin: auto;
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+.movie-info .containerd .rows {
+  background: transparent;
+  /* width: 260px;
+  height: 300px; */
+  overflow: hidden;
+  margin: 0 10px 0;
+  position: relative;
+  &:hover {
+    scale: 1.1;
+    transition: scale 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+}
+
+.movie-info .containerd .rows .image {
+  width: 220px;
+  height: 300px;
+  /* overflow: hidden; */
+}
+.movie-info .containerd .rows .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.movie-info .containerd .rows .infos {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* height: 100%; */
+  background: #00000017;
+  backdrop-filter: blur(2px);
+  z-index: 12;
+  & h2 {
+    text-align: center;
+    color: #fafdff;
+    font-size: 1.5vw;
+    line-height: 1.4;
+  }
+}
+
+/* ============ Movies Component and many components of about all css End ============ */
+
+/* ============ CommingSoon Component and many components of about all css Start ============ */
+#commingsoon {
+  position: relative;
+  top: 12rem;
+  height: 100%;
+  margin-bottom: 10rem;
+}
+#commingsoon .container {
+  width: 100%;
+  /* opacity: 0;
+  animation: display 4s linear forwards;
+  animation-delay: 1.5s; */
+}
+/* ============ CommingSoon Component and many components of about all css End ============ */
+
+/* ============ CompleteProcess Component and many components of about all css Start ============ */
+#process {
+  position: relative;
+  top: 10rem;
+  width: 100%;
+  height: 100%;
+  /* height: 100vh; */
+  /* display: grid;
+  place-items: center; */
+  margin-bottom: 18rem;
+}
+#process .container {
+  opacity: 0;
+  animation: display 4s linear forwards;
+  animation-delay: 1.5s;
+}
+#process .container .step-ticket {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 8rem;
+  /* max-width: 100%;
+  max-height: 100%; */
+}
+#process .container .step-ticket .details-ticket-comp {
+  display: flex;
+  align-items: center;
+  flex: 1 1 100%;
+  max-width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#process .container .step-ticket .buttons-next-back {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+/* process seat map start */
+#seatmap {
+  /* background: red; */
+  /* position: relative;
+  top: 7rem; */
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  /* margin-bottom: 4rem; */
+  > h1 {
+    margin-bottom: 1em;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 3vw;
+  }
+}
+
+/* alert css */
+.alertcomponent {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 50%;
+  margin: auto;
+  height: auto;
+  padding: 10px;
+  position: sticky;
+  top: 100px;
+  left: 20%;
+  z-index: 1000;
+  border: 1px solid rgba(2, 33, 2, 0.753);
+  background: rgba(2, 255, 2, 0.011);
+  backdrop-filter: blur(20px);
+}
+.alertcomponent p {
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 2;
+  color: #ddf;
+}
+
+@media screen and (max-width: 1080px) {
+  #process {
+    height: 100%;
+  }
+}
+/* process seat map end */
+
+/* process after in three step signup create element required is not login user */
+.required-signup {
+  background-color: rgba(255, 255, 255, 0.103);
+  backdrop-filter: blur(40px);
+  position: absolute;
+  top: 0;
+  width: 99vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+  > h1 {
+    color: #106ebb;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #00000033);
+    margin-bottom: 2rem;
+  }
+}
+.required-signup.hide {
+  display: none;
+}
+.required-signup a {
+  color: #222222;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+/* ============ CompleteProcess Component and many components of about all css End ============ */
+
+/* media query for large screen */
+@media screen and (max-width: 1020px) {
+  .container {
+    width: 100%;
+  }
+  #home #second {
+    margin-bottom: 2rem;
+  }
+
+  #movie .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+  }
+  #movie .container .row {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+  }
+  #movie .container .row .image {
+    max-width: 50%;
+    height: 500px;
+  }
+}

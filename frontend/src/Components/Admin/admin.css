@@ -1,0 +1,143 @@
+.main-admin {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ========= navbar admin ============= */
+.admin-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+.admin-nav .logo {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  > h1 {
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    font-size: 2.2vw;
+    font-weight: 200;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+.admin-nav .logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.admin-nav .logout {
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.1s ease;
+  > i {
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    color: #ddf;
+  }
+}
+.admin-nav .logout:hover {
+  background: rgba(255, 255, 255, 0.068);
+}
+
+/* ======== admin-dash ========= */
+#admin-dash {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0.5em;
+}
+
+#admin-dash .admin-info {
+  width: 80%;
+  margin: auto;
+  z-index: 1000;
+  > h1 {
+    color: #ddf;
+    display: block;
+    font-size: 3vw;
+    text-align: center;
+    letter-spacing: 1px;
+    background: linear-gradient(30deg, skyblue, #ddf);
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+#admin-dash .admin-info .container {
+  padding: 1em;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.gloweffect {
+  position: absolute;
+  top: 10%;
+  left: 12%;
+  width: 50%;
+  height: 50%;
+  background: rgba(8, 103, 192, 0.712);
+  /* background: rgba(255, 255, 255, 0.312); */
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 20%;
+}
+#admin-dash .admin-info .container form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 8px;
+  background: #07315213;
+  backdrop-filter: blur(120px);
+  height: 100%;
+  border-radius: 10px;
+}
+#admin-dash .admin-info .container form .input-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 6px;
+  height: 100%;
+  padding: 5px;
+}
+#admin-dash .admin-info .container form .input-box label {
+  font-size: 1.2em;
+  font-weight: 200;
+  color: #ddf;
+  line-height: 30px;
+  letter-spacing: 1px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#admin-dash .admin-info .container form .input-box input {
+  background: linear-gradient(80deg, #87ceeb26, #2196f30d);
+  padding: 14px 8px;
+  color: #ddf;
+  font-size: 1.1em;
+  &:focus {
+    background: #ddf;
+    color: #000;
+    transform: 0.2s;
+  }
+}
+#admin-dash .admin-info .container form button {
+  position: relative;
+  top: 2.1em;
+  left: 1em;
+  width: 30%;
+  height: 50%;
+}
+@media screen and (max-width: 500px) {
+  .admin-nav .logo {
+    width: 100px;
+    > h1 {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+}

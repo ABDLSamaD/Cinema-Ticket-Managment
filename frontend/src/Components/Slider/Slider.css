@@ -1,0 +1,277 @@
+/* component slider flow */
+.advanced-cinema-slider {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+  position: relative;
+  /* background: red; */
+}
+
+.max-w-lg {
+  width: 100%;
+}
+.max-w-lg .max-w-sm {
+  width: 90%;
+}
+
+.box {
+  /* width: 500px;
+  height: 500px; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  /* background: red; */
+  max-width: 380px;
+  /* padding: 1em; */
+  max-height: 600px;
+  overflow: hidden;
+}
+.box:hover {
+  scale: 1.1;
+  transition: scale 1s ease;
+}
+.box:hover .info {
+  transform: translateY(0);
+}
+
+.box .image {
+  transition: all 0.3s ease-in-out;
+  width: 400px;
+  height: 580px;
+}
+
+.box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ticket information */
+.ticket-info {
+  position: absolute;
+  top: 52%;
+  left: 10px;
+  /* transform: translate(-50%, -50%); */
+  /* text-align: center; */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 100%;
+  /* width: 100%; */
+}
+
+/* information element   */
+
+.info {
+  padding: 2px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  gap: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(250, 250, 250);
+  font-weight: 600;
+  font-size: 1.1em;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1.254);
+  transform: translateY(110%);
+  z-index: 999;
+}
+
+.info .rating {
+  border: 1px solid rgb(146, 146, 146);
+  padding: 2px;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1000;
+  top: 20rem;
+}
+
+.slick-prev {
+  left: -0.5rem;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-size: 3vw;
+  background: rgba(199, 199, 199, 0.159);
+  border-radius: 50%;
+  /* padding: 10px 6px 6px 8px; */
+}
+.slick-next {
+  right: 4rem;
+}
+
+@media screen and (max-width: 680px) {
+  /* slider box for all box classes */
+  .image-clousral {
+    height: 100%;
+    margin-bottom: 5rem;
+  }
+  .box {
+    max-width: 1000px;
+  }
+  .box .image {
+    max-width: 100px;
+    min-width: 350px;
+    max-height: 350px;
+  }
+  .box .image img {
+    max-width: 100%;
+    /* min-width: 100%; */
+    /* width: 90%; */
+    /* min-height: 200px; */
+  }
+  .info {
+    padding: 2px;
+    max-width: 20%;
+    min-width: 50%;
+    left: 10%;
+  }
+  .info p {
+    font-size: 0.6em;
+  }
+  .info a button.movie-btn {
+    width: 80%;
+    font-size: 0.9em;
+  }
+
+  /* some text info */
+  .ticket-info {
+    bottom: 7%;
+    left: -10px;
+    padding: 10px;
+    max-width: 80%;
+    height: 100%;
+  }
+}
+
+/* after 524px */
+@media screen and (max-width: 680px) {
+  .box {
+    max-width: 600px;
+  }
+  .box .image {
+    max-width: 100px;
+    min-width: 210px;
+    max-height: 210px;
+  }
+  .box .image img {
+    max-width: 100%;
+  }
+  .info {
+    padding: 2px;
+    max-width: 20%;
+    min-width: 90%;
+    left: 10%;
+  }
+  .info a button.movie-btn {
+    width: 100%;
+    font-size: 0.9em;
+  }
+}
+
+/* =============== Little Image Slider Start ===================== */
+.little-image-slider {
+  width: 100%;
+  z-index: 3;
+  opacity: 1;
+  padding: 4px;
+}
+
+.little-image-slider h1 {
+  margin-bottom: 19px;
+  color: #ddf;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+}
+
+.little-image-slider .slider-image {
+  /* max-width: 172px; */
+  height: 250px;
+  /* border: 1px solid #ffffff0a; */
+  /* padding: 0.1em; */
+  position: relative;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-width: 200px;
+  min-width: 150px;
+  &:hover {
+    transition: scale 0.4s ease-in-out;
+    scale: 1.09;
+  }
+}
+.little-image-slider .slider-image .image-slider {
+  width: 170px;
+  height: 170px;
+  overflow: hidden;
+}
+.little-image-slider .slider-image .image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.little-image-slider .info-image {
+  color: rgb(255, 255, 255);
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  z-index: 2;
+  padding: 2px;
+}
+/* =============== Little Image Slider End ===================== */
+
+/* media query for small screen start */
+@media screen and (max-width: 1020px) {
+  .little-image-slider .slider-image {
+    height: 220px;
+    max-width: 100px;
+    min-width: 80px;
+    overflow: hidden;
+  }
+  .little-image-slider .slider-image .image-slider {
+    width: 120px;
+    height: 120px;
+    /* overflow: hidden; */
+  }
+}
+@media screen and (max-width: 480px) {
+  .little-image-slider .slider-image {
+    height: 170px;
+    border: 1px solid #ffffff0a;
+    position: relative;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-width: 100px;
+    min-width: 80px;
+    overflow: hidden;
+  }
+  .little-image-slider .slider-image .image-slider {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+  }
+}
+/* media query for small screen end */

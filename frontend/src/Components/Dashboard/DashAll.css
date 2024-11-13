@@ -1,0 +1,306 @@
+/* ====================== dash Home start ====================== */
+.absolute_allDash {
+  position: absolute;
+  top: 7rem;
+  left: 15%;
+}
+
+#dashHome {
+  /* background: red; */
+  width: 80%;
+  height: 100%;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  /* z-index: 1000; */
+}
+#dashHome .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#dashHome .container .row {
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+}
+
+#dashHome .container .row h1 {
+  font-size: 2.2vw;
+  color: var(--color-white);
+  font-family: cursive;
+  > span {
+    color: rgb(239 255 0 / 88%);
+  }
+}
+
+#dashHome .container .row h2 {
+  color: var(--color-white);
+}
+#dashHome .container .row p {
+  color: var(--light-text);
+  margin-top: 10px;
+}
+
+#dashHome .container .row-movie {
+  display: grid;
+  grid-template-columns: repeat(4, 0.4fr);
+  width: 100%;
+  height: 100%;
+}
+#dashHome .container .row-movie .movie-details {
+  background: rgba(0, 0, 0, 0.315);
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.315);
+  width: 220px;
+  height: 400px;
+  padding: 15px;
+  margin: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#dashHome .container .row-movie .movie-details:hover {
+  scale: 1.05;
+  transition: all 0.3s linear;
+  z-index: 1;
+}
+#dashHome .container .movie-details .movie-img img {
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-fit: 3/2;
+}
+#dashHome .container .movie-details .movie-info {
+  color: #fff;
+}
+#dashHome .container .movie-details .movie-info h2 {
+  overflow: hidden;
+  font-size: 1.1vw;
+  width: 100%;
+  /* height: 50px; */
+  flex: 1 1 100px;
+  line-height: 25px;
+}
+#dashHome .container .movie-details .movie-info .movie-rating {
+  color: rgb(239 255 0 / 88%);
+}
+/* ====================== dash Home end ====================== */
+
+/* ====================== dash Movie start ====================== */
+#dashMovie {
+  /* background: red; */
+  width: 80%;
+  height: 100%;
+}
+/* ====================== dash Movie end ====================== */
+
+/* ====================== dash Food and Drinks start ====================== */
+
+#foodDrinks {
+  width: 80%;
+  /* background: red; */
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+#foodDrinks h1 {
+  line-height: 70px;
+  font-size: 2.56vw;
+  color: rgb(239 255 0 / 88%);
+  letter-spacing: 1px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+#foodDrinks .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+#foodDrinks .container .row {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.6em 1em;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1 1 450px;
+  width: 450px;
+  flex-wrap: wrap;
+  border-radius: 30px;
+}
+#foodDrinks .container .row .image-food img {
+  height: 400px;
+  border-radius: 30px;
+  overflow: hidden;
+  object-fit: contain;
+  filter: drop-shadow(1px 2px 4px rgba(12, 114, 155, 0.781));
+  &:hover {
+    scale: 1.02;
+    transition: scale 0.3s ease;
+  }
+}
+#foodDrinks .container .row .info-food {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  color: var(--color-white);
+}
+#foodDrinks .container .row .info-food h1 {
+  line-height: 50px;
+  letter-spacing: 2px;
+  > span {
+    color: rgb(239 255 0 / 88%);
+  }
+}
+#foodDrinks .container .row .info-food .order {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgb(239 255 0 / 88%);
+}
+/* ====================== dash Food and Drinks end ====================== */
+
+/* ====================== dash setting start ====================== */
+.info-dash {
+  font-size: 1.4em;
+  line-height: 2;
+  -webkit-text-reflect: below 1px linear-gradient(#fff, #000);
+  > span {
+    font-size: 0.8em;
+    margin-left: 10px;
+    font-weight: normal;
+    color: #8a8787;
+  }
+}
+.user-info {
+  position: relative;
+}
+
+/* movie ticket */
+.movie-ticket {
+  position: relative;
+  top: 8rem;
+  width: 100%;
+  height: 100%;
+}
+.movie-ticket .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+.movie-ticket .row .ticket-card {
+  position: relative;
+  background: #ededef05;
+  backdrop-filter: blur(20px);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  color: #ddf;
+}
+.movie-ticket .row .ticket-card h2 {
+  color: rgba(247, 140, 0, 0.671);
+  font-weight: normal;
+  position: fixed;
+  inset: 0;
+}
+.ticket-card .all-col {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 3px;
+  margin-bottom: 8px;
+  letter-spacing: 0.2pc;
+}
+.ticket-card .all-col span {
+  color: #eeff00ab;
+}
+.ticket-card .col-2 .seats {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  & span {
+    margin: 2px 0;
+    letter-spacing: 1px;
+    color: #eeff00ab;
+  }
+}
+.ticket-card .random-id {
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+.ticket-card .start {
+  position: relative;
+  margin-bottom: 10px;
+  display: flex;
+  align-self: start;
+  justify-content: start;
+  color: #ddf;
+}
+/* ====================== dash setting end ====================== */
+
+@media screen and (max-width: 1020px) {
+  .absolute_allDash {
+    top: 7rem;
+    left: 30%;
+  }
+  #dashHome {
+    width: 60%;
+  }
+  #dashHome .container .row-movie {
+    display: grid;
+    grid-template-columns: repeat(2, 0.4fr);
+    width: 100%;
+  }
+  #dashHome .container .row h1 {
+    font-size: 1.5vw;
+  }
+
+  #dashHome .container .row h2 {
+    font-size: 1.1vw;
+  }
+  #dashHome .container .row p {
+    font-size: 0.7em;
+    text-overflow: ellipsis;
+  }
+  .movie-ticket .row {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .absolute_allDash {
+    top: 7rem;
+    left: 40%;
+  }
+  #dashHome {
+    width: 60%;
+  }
+  #dashHome .container .row h1 {
+    font-size: 1em;
+  }
+  #dashHome .container .row h2 {
+    font-size: 1em;
+  }
+  #dashHome .container .row-movie {
+    display: grid;
+    grid-template-columns: repeat(1, 0.4fr);
+    width: 100%;
+  }
+  #dashHome .container .row-movie .movie-details {
+    width: 160px;
+    padding: 10px;
+    margin: 20px 10px;
+  }
+  #dashHome .container .movie-details .movie-img img {
+    width: 150px;
+    height: 150px;
+  }
+}
